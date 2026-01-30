@@ -1,0 +1,9 @@
+services:
+  build:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: abelohost-shop
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    restart: unless-stopped
