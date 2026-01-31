@@ -1,5 +1,6 @@
 import { LogOut, LogIn } from "lucide-react";
 import styles from "./auth-section.module.scss";
+import Link from "next/link";
 
 export default function AuthSection() {
   const isLogin = false;
@@ -17,9 +18,9 @@ export default function AuthSection() {
   }
 
   return (
-    <button className={styles.button}>
+    <Link href="/auth" className={styles.button}>
       <LogIn className={styles.icon} />
       Login
-    </button>
+    </Link>
   );
 }
