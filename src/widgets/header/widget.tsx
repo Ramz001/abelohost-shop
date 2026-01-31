@@ -1,11 +1,10 @@
-import styles from "./header.module.scss";
 import Navigation from "./ui/navigation";
 import MainHeader from "./ui/main-header";
 import TopBar from "./ui/top-bar";
 
-export default function HeaderWidget({}) {
+export default function HeaderWidget() {
   return (
-    <header className={styles.header}>
+    <header>
       <TopBar />
       <MainHeader />
       <Navigation />

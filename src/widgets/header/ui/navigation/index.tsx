@@ -1,24 +1,15 @@
 import Link from "next/link";
 import styles from "./navigation.module.scss";
 import Gutter from "@shared/ui/gutter";
-
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/hot-deals", label: "Hot Deals" },
-  { href: "/categories", label: "Categories" },
-  { href: "/laptops", label: "Laptops" },
-  { href: "/smartphones", label: "Smartphones" },
-  { href: "/cameras", label: "Camera" },
-  { href: "/accessories", label: "Accessories" },
-];
+import { navigationLinks } from "@widgets/header/consts/navigation-links";
 
 const Navigation = () => {
   return (
     <section className={styles.container}>
       <Gutter>
-        <nav className={styles.navigation}>
-          {links.map((link) => (
-            <Link key={link.href} href={link.href} className={styles.navLink}>
+        <nav className={styles.wrapper}>
+          {navigationLinks.map((link) => (
+            <Link key={link.href} href={link.href} className={styles.link}>
               {link.label}
             </Link>
           ))}

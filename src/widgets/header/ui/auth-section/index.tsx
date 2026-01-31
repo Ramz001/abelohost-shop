@@ -6,8 +6,8 @@ export default function AuthSection() {
 
   if (isLogin) {
     return (
-      <div className={styles.container}>
-        <span className={styles.user}>User Name</span>
+      <div className={styles.wrapper}>
+        <span>User Name</span>
         <button className={styles.button}>
           <LogOut className={styles.icon} />
           Logout

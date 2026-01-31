@@ -3,21 +3,21 @@
   border-bottom: 2px solid var(--border);
 }
 
-.navigation {
+.wrapper {
   display: flex;
-  gap: 4rem;
+  gap: 2rem;
+}
 
-  a {
-    display: block;
-    padding: 18px 0;
-    color: hsl(var(--foreground));
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+.link {
+  display: block;
+  padding: 18px 0;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 
-    &:hover {
-      color: hsl(var(--primary));
-    }
+  &:hover {
+    color: hsl(var(--primary));
   }
 }
