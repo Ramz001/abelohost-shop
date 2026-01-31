@@ -1,0 +1,23 @@
+.container {
+  background-color: var(--background);
+  border-bottom: 2px solid var(--border);
+}
+
+.navigation {
+  display: flex;
+  gap: 4rem;
+
+  a {
+    display: block;
+    padding: 18px 0;
+    color: hsl(var(--foreground));
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: hsl(var(--primary));
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.header {
+  width: 100%;
+  background-color: var(--primary);
+
+  .container {
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.topBar {
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 14px;
+
+  .contactInfo {
+    display: flex;
+    gap: 30px;
+  }
+
+  .contactItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .icon {
+      color: #ef233c;
+    }
+  }
+
+  .authSection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .userName {
+    color: #ffffff;
+  }
+
+  .loginLink,
+  .logoutBtn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #ef233c;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ff4d6d;
+    }
+
+    .icon {
+      font-size: 16px;
+    }
+  }
+}
+
+.mainHeader {
+  background-color: #2b2d42;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+ 
+
+}
+
+@media (max-width: 992px) {
+  .topBar {
+    .contactInfo {
+      gap: 15px;
+      font-size: 12px;
+    }
+  }
+
+  .mainHeader {
+    .banner {
+      width: 400px;
+      height: 50px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .topBar {
+    .contactInfo {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  .mainHeader {
+    .container {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .banner {
+      width: 100%;
+    }
+  }
+}
