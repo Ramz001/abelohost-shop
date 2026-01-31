@@ -9,7 +9,7 @@ import { handleError } from "@shared/utils/handle-error";
 import { useRouter } from "next/navigation";
 import { LoginSchema } from "../models/login.schema";
 import axios from "axios";
-import { useAuthStore } from "../models/useAuthStore";
+import { useAuthStore } from "@shared/models/useAuthStore";
 
 import styles from "./login-form.module.scss";
 

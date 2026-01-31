@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import * as LucideIcons from "lucide-react";
+import type * as LucideIcons from "lucide-react";
 
 type ContactLink = {
   href: string;
@@ -19,7 +19,7 @@ export const contactLinks: ContactLink[] = [
     text: "shop@abelohost.com",
   },
   {
-    href: "https://goo.gl/maps/xyz",
+    href: "#",
     icon: MapPin,
     text: "1734 Stonecoal Road",
   },
