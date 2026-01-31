@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import type { Product } from "@entities/product";
-import { fetchProducts } from "../api/productsApi";
+import { fetchProducts } from "../api/products.api";
 
 interface ProductsState {
   data: Product[];

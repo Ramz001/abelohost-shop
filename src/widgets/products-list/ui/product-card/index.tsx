@@ -11,7 +11,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <Image
           src={product.thumbnail}
           alt={product.title}
-          width={320}
+          width={200}
           height={200}
           className={styles.image}
         />
