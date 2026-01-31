@@ -1,0 +1,11 @@
+.container {
+  background-color: var(--primary);
+  border-bottom: 2px solid var(--active);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}

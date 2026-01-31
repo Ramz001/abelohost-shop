@@ -1,9 +1,7 @@
 import "@app/styles/globals.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import HeaderWidget from "@widgets/header";
-import FooterWidget from "@widgets/footer";
-
+import RootProvider from "@app/providers/root.provider";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
@@ -19,9 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" translate="no">
       <body className={inter.variable}>
-        <HeaderWidget />
-        {children}
-        <FooterWidget isAuthenticated={false} />
+        <RootProvider>{children}</RootProvider>
       </body>
     </html>
   );
