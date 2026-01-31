@@ -1,26 +1,25 @@
 /* eslint-disable react/no-children-prop */
-"use client";
+'use client'
 
-import { useForm } from "@tanstack/react-form";
-import { toast } from "sonner";
-import { Spinner } from "@shared/ui/spinner";
-import { FormError } from "@shared/ui/form-error";
-import { handleError } from "@shared/lib/handle-error";
-import { useRouter } from "next/navigation";
-import { LoginSchema } from "../models/login.schema";
-import axios from "axios";
-import { useAuthStore } from "@shared/models/useAuthStore";
-
-import styles from "./login-form.module.scss";
+import { useForm } from '@tanstack/react-form'
+import { toast } from 'sonner'
+import { Spinner } from '@shared/ui/spinner'
+import { FormError } from '@shared/ui/form-error'
+import { handleError } from '@shared/lib/handle-error'
+import { useRouter } from 'next/navigation'
+import { LoginSchema } from '../models/login.schema'
+import axios from 'axios'
+import styles from './login-form.module.scss'
+import { useAuthStore } from '@shared/models/useAuthStore'
 
 export function LoginForm() {
-  const router = useRouter();
-  const { setUser } = useAuthStore();
+  const router = useRouter()
+  const { setUser } = useAuthStore()
 
   const form = useForm({
     defaultValues: {
-      username: "",
-      password: "",
+      username: '',
+      password: '',
     },
     validators: {
       onSubmit: LoginSchema,
@@ -28,22 +27,22 @@ export function LoginForm() {
     onSubmit: async ({ value }) => {
       try {
         const { data, status } = await axios.post(
-          "https://dummyjson.com/auth/login",
-          value,
-        );
+          'https://dummyjson.com/auth/login',
+          value
+        )
 
         if (status !== 200) {
-          throw new Error("Login failed");
+          throw new Error('Login failed')
         }
 
-        setUser(data);
-        toast.success("Successfully logged in");
-        router.push("/");
+        setUser(data)
+        toast.success('Successfully logged in')
+        router.push('/')
       } catch (error) {
-        handleError(error);
+        handleError(error)
       }
     },
-  });
+  })
 
   return (
     <section className={styles.section}>
@@ -51,15 +50,15 @@ export function LoginForm() {
         id="login-form"
         className={styles.form}
         onSubmit={(e) => {
-          e.preventDefault();
-          void form.handleSubmit();
+          e.preventDefault()
+          void form.handleSubmit()
         }}
       >
         <form.Field
           name="username"
           children={(field) => {
             const isInvalid =
-              field.state.meta.isTouched && !field.state.meta.isValid;
+              field.state.meta.isTouched && !field.state.meta.isValid
             return (
               <div className={styles.field} data-invalid={isInvalid}>
                 <label htmlFor={field.name} className={styles.label}>
@@ -79,7 +78,7 @@ export function LoginForm() {
                 />
                 {isInvalid && <FormError errors={field.state.meta.errors} />}
               </div>
-            );
+            )
           }}
         />
 
@@ -87,7 +86,7 @@ export function LoginForm() {
           name="password"
           children={(field) => {
             const isInvalid =
-              field.state.meta.isTouched && !field.state.meta.isValid;
+              field.state.meta.isTouched && !field.state.meta.isValid
             return (
               <div className={styles.field} data-invalid={isInvalid}>
                 <label htmlFor={field.name} className={styles.label}>
@@ -107,7 +106,7 @@ export function LoginForm() {
                 />
                 {isInvalid && <FormError errors={field.state.meta.errors} />}
               </div>
-            );
+            )
           }}
         />
       </form>
@@ -121,10 +120,10 @@ export function LoginForm() {
             disabled={isSubmitting}
             className={styles.button}
           >
-            {isSubmitting ? <Spinner /> : "Login"}
+            {isSubmitting ? <Spinner /> : 'Login'}
           </button>
         )}
       />
     </section>
-  );
+  )
 }

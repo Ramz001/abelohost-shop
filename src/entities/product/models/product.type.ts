@@ -1,45 +1,45 @@
 export interface Product {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  price: number;
-  discountPercentage: number;
-  rating: number;
-  stock: number;
-  tags: string[];
-  brand: string;
-  sku: string;
-  weight: number;
-  dimensions: Dimensions;
-  warrantyInformation: string;
-  shippingInformation: string;
-  availabilityStatus: "In Stock" | "Out of Stock" | string;
-  reviews: Review[];
-  returnPolicy: string;
-  minimumOrderQuantity: number;
-  meta: Meta;
-  images: string[];
-  thumbnail: string;
+  id: number
+  title: string
+  description: string
+  category: string
+  price: number
+  discountPercentage: number
+  rating: number
+  stock: number
+  tags: string[]
+  brand: string
+  sku: string
+  weight: number
+  dimensions: Dimensions
+  warrantyInformation: string
+  shippingInformation: string
+  availabilityStatus: 'In Stock' | 'Out of Stock' | string
+  reviews: Review[]
+  returnPolicy: string
+  minimumOrderQuantity: number
+  meta: Meta
+  images: string[]
+  thumbnail: string
 }
 
 interface Dimensions {
-  width: number;
-  height: number;
-  depth: number;
+  width: number
+  height: number
+  depth: number
 }
 
 interface Review {
-  rating: number;
-  comment: string;
-  date: string; // ISO string
-  reviewerName: string;
-  reviewerEmail: string;
+  rating: number
+  comment: string
+  date: string // ISO string
+  reviewerName: string
+  reviewerEmail: string
 }
 
 interface Meta {
-  createdAt: string; // ISO string
-  updatedAt: string; // ISO string
-  barcode: string;
-  qrCode: string;
+  createdAt: string // ISO string
+  updatedAt: string // ISO string
+  barcode: string
+  qrCode: string
 }

@@ -1,4 +1,4 @@
-import { Toaster } from "sonner";
+import { Toaster } from 'sonner'
 
 export function ToastProvider({ children }: { children: React.ReactNode }) {
   return (
@@ -6,5 +6,5 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
       {children}
       <Toaster position="top-center" richColors />
     </>
-  );
+  )
 }

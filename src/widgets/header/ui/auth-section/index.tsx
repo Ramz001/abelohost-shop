@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import { LogOut, LogIn } from "lucide-react";
-import styles from "./auth-section.module.scss";
-import Link from "next/link";
-import { useAuthStore } from "@shared/models/useAuthStore";
+import { LogOut, LogIn } from 'lucide-react'
+import styles from './auth-section.module.scss'
+import Link from 'next/link'
+import { useAuthStore } from '@shared/models/useAuthStore'
 
 export default function AuthSection() {
-  const { user, clearUser } = useAuthStore();
+  const { user, clearUser } = useAuthStore()
 
   if (user?.id) {
     return (
@@ -19,7 +19,7 @@ export default function AuthSection() {
           Logout
         </button>
       </div>
-    );
+    )
   }
 
   return (
@@ -27,5 +27,5 @@ export default function AuthSection() {
       <LogIn className={styles.icon} />
       Login
     </Link>
-  );
+  )
 }

@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import { useAuthStore } from "@shared/models/useAuthStore";
-import styles from "./footer.module.scss";
-import Gutter from "@shared/ui/gutter";
+import { useAuthStore } from '@shared/models/useAuthStore'
+import styles from './footer.module.scss'
+import Gutter from '@shared/ui/gutter'
 
 export default function FooterWidget() {
-  const { user } = useAuthStore();
-  const currentYear = new Date().getFullYear();
+  const { user } = useAuthStore()
+  const currentYear = new Date().getFullYear()
 
   return (
     <footer className={styles.container}>
@@ -20,5 +20,5 @@ export default function FooterWidget() {
         )}
       </Gutter>
     </footer>
-  );
+  )
 }

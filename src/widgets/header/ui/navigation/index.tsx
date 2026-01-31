@@ -1,7 +1,7 @@
-import Link from "next/link";
-import styles from "./navigation.module.scss";
-import Gutter from "@shared/ui/gutter";
-import { navigationLinks } from "@widgets/header/consts/navigation-links";
+import Link from 'next/link'
+import styles from './navigation.module.scss'
+import Gutter from '@shared/ui/gutter'
+import { navigationLinks } from '@widgets/header/consts/navigation-links'
 
 const Navigation = () => {
   return (
@@ -16,7 +16,7 @@ const Navigation = () => {
         </nav>
       </Gutter>
     </section>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

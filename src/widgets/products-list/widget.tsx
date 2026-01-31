@@ -1,23 +1,23 @@
-"use client";
+'use client'
 
-import { useEffect } from "react";
-import { useProductsStore } from "./models/useProductsStore";
-import ProductCard from "./ui/product-card";
-import styles from "./products-list.module.scss";
+import { useEffect } from 'react'
+import { useProductsStore } from './models/useProductsStore'
+import ProductCard from './ui/product-card'
+import styles from './products-list.module.scss'
 
 export default function ProductsListWidget() {
-  const { fetchProducts, data, loading, error } = useProductsStore();
+  const { fetchProducts, data, loading, error } = useProductsStore()
 
   useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
+    fetchProducts()
+  }, [fetchProducts])
 
   if (loading) {
-    return <div className={styles.loading}>Loading products...</div>;
+    return <div className={styles.loading}>Loading products...</div>
   }
 
   if (error) {
-    return <div className={styles.error}>Error: {error}</div>;
+    return <div className={styles.error}>Error: {error}</div>
   }
 
   return (
@@ -26,5 +26,5 @@ export default function ProductsListWidget() {
         <ProductCard key={product.id} product={product} />
       ))}
     </section>
-  );
+  )
 }

@@ -1,9 +1,9 @@
-import type { Product } from "@entities/product";
-import styles from "./product-card.module.scss";
-import Image from "next/image";
+import type { Product } from '@entities/product'
+import styles from './product-card.module.scss'
+import Image from 'next/image'
 
 export default function ProductCard({ product }: { product: Product }) {
-  const isAuthenticated = true;
+  const isAuthenticated = true
 
   return (
     <div className={styles.card}>
@@ -27,5 +27,5 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

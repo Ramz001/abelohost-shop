@@ -1,6 +1,6 @@
-import z from "zod";
-import { password, username } from "@/shared/models/primitive.schema";
+import z from 'zod'
+import { password, username } from '@/shared/models/primitive.schema'
 
-export const LoginSchema = z.object({ password, username });
+export const LoginSchema = z.object({ password, username })
 
-export type LoginType = z.infer<typeof LoginSchema>;
+export type LoginType = z.infer<typeof LoginSchema>

@@ -1,6 +1,6 @@
-import Navigation from "./ui/navigation";
-import MainHeader from "./ui/main-header";
-import TopBar from "./ui/top-bar";
+import Navigation from './ui/navigation'
+import MainHeader from './ui/main-header'
+import TopBar from './ui/top-bar'
 
 export default function HeaderWidget() {
   return (
@@ -9,5 +9,5 @@ export default function HeaderWidget() {
       <MainHeader />
       <Navigation />
     </header>
-  );
+  )
 }

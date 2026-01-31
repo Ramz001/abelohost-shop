@@ -1,6 +1,6 @@
-import Link from "next/link";
-import styles from "./contacts.module.scss";
-import { contactLinks } from "@widgets/header/consts/contact-links";
+import Link from 'next/link'
+import styles from './contacts.module.scss'
+import { contactLinks } from '@widgets/header/consts/contact-links'
 
 const Contacts = () => {
   return (
@@ -12,7 +12,7 @@ const Contacts = () => {
         </Link>
       ))}
     </section>
-  );
-};
+  )
+}
 
-export default Contacts;
+export default Contacts

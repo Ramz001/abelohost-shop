@@ -1,8 +1,8 @@
-"use client";
+'use client'
 
-import Gutter from "@shared/ui/gutter";
-import { LoginForm } from "./ui/login-form";
-import styles from "./auth.module.scss";
+import Gutter from '@shared/ui/gutter'
+import { LoginForm } from './ui/login-form'
+import styles from './auth.module.scss'
 
 const AuthPage = () => {
   return (
@@ -12,7 +12,7 @@ const AuthPage = () => {
         <LoginForm />
       </div>
     </Gutter>
-  );
-};
+  )
+}
 
-export default AuthPage;
+export default AuthPage

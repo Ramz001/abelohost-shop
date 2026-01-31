@@ -16,7 +16,7 @@
   flex-direction: column;
   gap: 0.5rem;
 
-  &[data-invalid="true"] {
+  &[data-invalid='true'] {
     .input {
       border-color: var(--error, #ef4444);
 

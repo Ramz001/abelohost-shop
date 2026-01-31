@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./spinner.module.scss";
+import React from 'react'
+import styles from './spinner.module.scss'
 
 export const Spinner: React.FC = () => {
-  return <div className={styles.spinner}></div>;
-};
+  return <div className={styles.spinner}></div>
+}

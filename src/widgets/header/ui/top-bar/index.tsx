@@ -1,7 +1,7 @@
-import Gutter from "@shared/ui/gutter";
-import Contacts from "../contacts";
-import styles from "./top-bar.module.scss";
-import AuthSection from "../auth-section";
+import Gutter from '@shared/ui/gutter'
+import Contacts from '../contacts'
+import styles from './top-bar.module.scss'
+import AuthSection from '../auth-section'
 
 const TopBar = () => {
   return (
@@ -13,7 +13,7 @@ const TopBar = () => {
         </div>
       </Gutter>
     </section>
-  );
-};
+  )
+}
 
-export default TopBar;
+export default TopBar
