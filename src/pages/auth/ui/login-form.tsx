@@ -8,11 +8,14 @@ import { FormError } from "@shared/ui/form-error";
 import { handleError } from "@shared/utils/handle-error";
 import { useRouter } from "next/navigation";
 import { LoginSchema } from "../models/login.schema";
-import { authApi } from "@shared/api/auth.api";
+import axios from "axios";
+import { useAuthStore } from "../models/useAuthStore";
+
 import styles from "./login-form.module.scss";
 
 export function LoginForm() {
   const router = useRouter();
+  const { setUser } = useAuthStore();
 
   const form = useForm({
     defaultValues: {
@@ -24,13 +27,15 @@ export function LoginForm() {
     },
     onSubmit: async ({ value }) => {
       try {
-        const response = await authApi.login(value);
-
-        if (!response.success) {
-          // toast.error(response.message || "Authentication failed");
-          return;
+        const { data, status } = await axios.post(
+          "https://dummyjson.com/auth/login",
+          value,
+        );
+        if (status !== 200) {
+          throw new Error("Login failed");
         }
-
+        console.log(data);
+        setUser(data);
         toast.success("Successfully logged in");
         router.push("/");
       } catch (error) {
