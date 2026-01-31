@@ -1,9 +1,10 @@
 import Gutter from "@shared/ui/gutter";
+import ProductsListWidget from "@widgets/products-list";
 
 const HomePage = () => {
   return (
     <Gutter>
-      <div>HomePage</div>
+      <ProductsListWidget />
     </Gutter>
   );
 };

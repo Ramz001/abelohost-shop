@@ -8,25 +8,16 @@ interface FooterWidgetProps {
   userEmail?: string;
 }
 
-export default function FooterWidget({
-  isAuthenticated = false,
-  userEmail,
-}: FooterWidgetProps) {
+export default function FooterWidget({}: FooterWidgetProps) {
+  const isAuth = false;
+
   const currentYear = new Date().getFullYear();
 
   return (
-    <Gutter>
-      <footer className={styles.footer}>
-        <div className={styles.container}>
-          {isAuthenticated && userEmail ? (
-            <p>
-              {currentYear} | Logged as {userEmail}
-            </p>
-          ) : (
-            <p>{currentYear}</p>
-          )}
-        </div>
-      </footer>
-    </Gutter>
+    <footer className={styles.footer}>
+      <Gutter>
+        {isAuth ? <p>{currentYear} | Logged as user</p> : <p>{currentYear}</p>}
+      </Gutter>
+    </footer>
   );
 }
