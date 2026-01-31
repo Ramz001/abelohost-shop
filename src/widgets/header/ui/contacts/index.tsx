@@ -22,14 +22,14 @@ const links = [
 
 const Contacts = () => {
   return (
-    <div className={styles.wrapper}>
+    <section className={styles.wrapper}>
       {links.map(({ href, icon: Icon, text }) => (
         <Link key={href} href={href} className={styles.link}>
           <Icon className={styles.icon} />
           <span>{text}</span>
         </Link>
       ))}
-    </div>
+    </section>
   );
 };
 

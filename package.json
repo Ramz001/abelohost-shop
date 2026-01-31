@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "format:check": "prettier --check .",
-    "format:write": "prettier --write .",
+    "format:fix": "prettier --write .",
     "styles:check": "stylelint '**/*.{css,scss}'",
     "styles:fix": "stylelint '**/*.{css,scss}' --fix"
   },
