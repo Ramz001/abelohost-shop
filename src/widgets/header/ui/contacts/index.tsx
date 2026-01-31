@@ -8,7 +8,7 @@ const Contacts = () => {
       {contactLinks.map(({ href, icon: Icon, text }) => (
         <Link key={href} href={href} className={styles.link}>
           <Icon className={styles.icon} />
-          <span>{text}</span>
+          <span className={styles.title}>{text}</span>
         </Link>
       ))}
     </section>

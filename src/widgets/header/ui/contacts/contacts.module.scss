@@ -2,12 +2,25 @@
   display: flex;
   gap: 2rem;
   padding: 0.5rem 0;
+
+  @media (width <= 768px) {
+    gap: 1rem;
+  }
 }
 
 .icon {
   width: 16px;
   height: 16px;
   color: inherit;
+}
+
+.title {
+  font-size: 0.875rem;
+  color: var(--primary-foreground);
+
+  @media (width <= 768px) {
+    display: none;
+  }
 }
 
 .link {
@@ -20,16 +33,5 @@
 
   &:hover {
     color: var(--accent);
-  }
-}
-
-@media (width <= 600px) {
-  .wrapper {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .link {
-    align-items: start;
   }
 }

@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import { useProductsStore } from './models/useProductsStore'
 import ProductCard from './ui/product-card'
+import ProductCardSkeleton from './ui/product-card-skeleton'
 import styles from './products-list.module.scss'
 
 export default function ProductsListWidget() {
@@ -13,7 +14,13 @@ export default function ProductsListWidget() {
   }, [fetchProducts])
 
   if (loading) {
-    return <div className={styles.loading}>Loading products...</div>
+    return (
+      <section className={styles.wrapper}>
+        {Array.from({ length: 8 }).map((_, index) => (
+          <ProductCardSkeleton key={index} />
+        ))}
+      </section>
+    )
   }
 
   if (error) {

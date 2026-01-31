@@ -1,6 +1,11 @@
 .container {
   background-color: var(--background);
   border-bottom: 2px solid var(--border);
+
+  @media (width <= 768px) {
+    border-bottom: none;
+    padding-top: 0.5rem;
+  }
 }
 
 .wrapper {
@@ -10,21 +15,40 @@
 
 .link {
   display: block;
-  padding: 18px 0;
-  color: hsl(var(--foreground));
+  padding: 1.125rem 0;
+  color: var(--foreground);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   transition: color 0.3s ease;
 
   &:hover {
-    color: hsl(var(--primary));
+    color: var(--primary);
+  }
+
+  @media (width <= 768px) {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    background: var(--muted);
+    font-size: 0.875rem;
+    white-space: nowrap;
+
+    &:hover {
+      background: var(--muted-foreground);
+    }
   }
 }
 
 @media (width <= 768px) {
   .wrapper {
-    flex-direction: column;
-    gap: 0;
+    gap: 0.75rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .wrapper::-webkit-scrollbar {
+    display: none;
   }
 }
