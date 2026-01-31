@@ -10,7 +10,7 @@
   font-weight: 500;
 }
 
-@media (max-width: 640px) {
+@media (width <= 640px) {
   .banner {
     display: none;
   }

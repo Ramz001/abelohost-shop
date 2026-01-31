@@ -5,7 +5,7 @@ import { useForm } from "@tanstack/react-form";
 import { toast } from "sonner";
 import { Spinner } from "@shared/ui/spinner";
 import { FormError } from "@shared/ui/form-error";
-import { handleError } from "@shared/utils/handle-error";
+import { handleError } from "@shared/lib/handle-error";
 import { useRouter } from "next/navigation";
 import { LoginSchema } from "../models/login.schema";
 import axios from "axios";
@@ -31,10 +31,11 @@ export function LoginForm() {
           "https://dummyjson.com/auth/login",
           value,
         );
+
         if (status !== 200) {
           throw new Error("Login failed");
         }
-        console.log(data);
+
         setUser(data);
         toast.success("Successfully logged in");
         router.push("/");
@@ -60,7 +61,7 @@ export function LoginForm() {
             const isInvalid =
               field.state.meta.isTouched && !field.state.meta.isValid;
             return (
-              <div className={styles.fieldWrapper} data-invalid={isInvalid}>
+              <div className={styles.field} data-invalid={isInvalid}>
                 <label htmlFor={field.name} className={styles.label}>
                   Username
                 </label>
@@ -88,7 +89,7 @@ export function LoginForm() {
             const isInvalid =
               field.state.meta.isTouched && !field.state.meta.isValid;
             return (
-              <div className={styles.fieldWrapper} data-invalid={isInvalid}>
+              <div className={styles.field} data-invalid={isInvalid}>
                 <label htmlFor={field.name} className={styles.label}>
                   Password
                 </label>
@@ -118,7 +119,7 @@ export function LoginForm() {
             type="submit"
             form="login-form"
             disabled={isSubmitting}
-            className={styles.submitButton}
+            className={styles.button}
           >
             {isSubmitting ? <Spinner /> : "Login"}
           </button>

@@ -23,11 +23,12 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .wrapper {
     flex-direction: column;
     gap: 1rem;
   }
+
   .link {
     align-items: start;
   }

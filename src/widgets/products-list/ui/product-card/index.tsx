@@ -7,7 +7,7 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className={styles.card}>
-      <div className={styles.card_header}>
+      <div className={styles.header}>
         <Image
           src={product.thumbnail}
           alt={product.title}
@@ -16,13 +16,13 @@ export default function ProductCard({ product }: { product: Product }) {
           className={styles.image}
         />
       </div>
-      <div className={styles.card_content}>
+      <div className={styles.content}>
         <h3 className={styles.title}>{product.title}</h3>
         <p className={styles.category}>{product.category}</p>
         <div className={styles.footer}>
           <span className={styles.price}>${product.price.toFixed(2)}</span>
           {isAuthenticated && (
-            <button className={styles.addButton}>Add to cart</button>
+            <button className={styles.button}>Add to cart</button>
           )}
         </div>
       </div>

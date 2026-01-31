@@ -1,5 +1,6 @@
 import HeaderWidget from "@widgets/header";
 import FooterWidget from "@widgets/footer";
+import { ToastProvider } from "./toast.provider";
 
 export default function RootProvider({
   children,
@@ -7,10 +8,10 @@ export default function RootProvider({
   children: React.ReactNode;
 }) {
   return (
-    <main className="page-container">
+    <>
       <HeaderWidget />
-      {children}
+      <ToastProvider>{children}</ToastProvider>
       <FooterWidget />
-    </main>
+    </>
   );
 }

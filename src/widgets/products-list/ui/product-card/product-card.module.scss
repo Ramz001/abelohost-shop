@@ -13,7 +13,7 @@
   }
 }
 
-.card_header {
+.header {
   width: 100%;
   height: 200px;
   overflow: hidden;
@@ -29,7 +29,7 @@
   object-fit: contain;
 }
 
-.card_content {
+.content {
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@
   color: var(--foreground);
 }
 
-.addButton {
+.button {
   padding: 0.5rem 1rem;
   background-color: var(--foreground);
   color: var(--background);

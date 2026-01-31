@@ -1,15 +1,20 @@
+"use client";
+
 import { LogOut, LogIn } from "lucide-react";
 import styles from "./auth-section.module.scss";
 import Link from "next/link";
+import { useAuthStore } from "@shared/models/useAuthStore";
 
 export default function AuthSection() {
-  const isLogin = false;
+  const { user, clearUser } = useAuthStore();
 
-  if (isLogin) {
+  if (user?.id) {
     return (
       <div className={styles.wrapper}>
-        <span>User Name</span>
-        <button className={styles.button}>
+        <span>
+          {user.firstName} {user.lastName}
+        </span>
+        <button className={styles.button} onClick={clearUser}>
           <LogOut className={styles.icon} />
           Logout
         </button>

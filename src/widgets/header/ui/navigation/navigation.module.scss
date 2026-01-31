@@ -22,9 +22,9 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .wrapper {
     flex-direction: column;
-    gap: 0rem;
+    gap: 0;
   }
 }
