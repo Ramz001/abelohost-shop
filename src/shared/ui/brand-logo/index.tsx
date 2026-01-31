@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from './brand-logo.module.scss'
+import styles from "./brand-logo.module.scss";
 
 const BrandLogo = () => {
   return (

@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "styles:check": "stylelint '**/*.{css,scss}'",
+    "styles:fix": "stylelint '**/*.{css,scss}' --fix"
   },
   "dependencies": {
     "@tanstack/react-form": "^1.28.0",
