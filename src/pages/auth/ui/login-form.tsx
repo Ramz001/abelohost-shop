@@ -7,8 +7,9 @@ import { Spinner } from "@shared/ui/spinner";
 import { FormError } from "@shared/ui/form-error";
 import { handleError } from "@shared/utils/handle-error";
 import { useRouter } from "next/navigation";
-import { LoginSchema } from "@shared/models/auth.schema";
+import { LoginSchema } from "../models/login.schema";
 import { authApi } from "@shared/api/auth.api";
+import styles from "./login-form.module.scss";
 
 export function LoginForm() {
   const router = useRouter();
@@ -39,76 +40,85 @@ export function LoginForm() {
   });
 
   return (
-    <section>
-      <div>
-        <form
-          id="login-form"
-          onSubmit={(e) => {
-            e.preventDefault();
-            void form.handleSubmit();
+    <section className={styles.section}>
+      <form
+        id="login-form"
+        className={styles.form}
+        onSubmit={(e) => {
+          e.preventDefault();
+          void form.handleSubmit();
+        }}
+      >
+        <form.Field
+          name="username"
+          children={(field) => {
+            const isInvalid =
+              field.state.meta.isTouched && !field.state.meta.isValid;
+            return (
+              <div className={styles.fieldWrapper} data-invalid={isInvalid}>
+                <label htmlFor={field.name} className={styles.label}>
+                  Username
+                </label>
+                <input
+                  id={field.name}
+                  name={field.name}
+                  type="text"
+                  value={field.state.value}
+                  onBlur={field.handleBlur}
+                  onChange={(e) => field.handleChange(e.target.value)}
+                  aria-invalid={isInvalid}
+                  placeholder="Enter your username"
+                  autoComplete="username"
+                  className={styles.input}
+                />
+                {isInvalid && <FormError errors={field.state.meta.errors} />}
+              </div>
+            );
           }}
-        >
-          <form.Field
-            name="username"
-            children={(field) => {
-              const isInvalid =
-                field.state.meta.isTouched && !field.state.meta.isValid;
-              return (
-                <div data-invalid={isInvalid}>
-                  <label htmlFor={field.name}>Username</label>
-                  <input
-                    id={field.name}
-                    name={field.name}
-                    type="text"
-                    value={field.state.value}
-                    onBlur={field.handleBlur}
-                    onChange={(e) => field.handleChange(e.target.value)}
-                    aria-invalid={isInvalid}
-                    placeholder="Enter your username"
-                    autoComplete="username"
-                  />
-                  {isInvalid && <FormError errors={field.state.meta.errors} />}
-                </div>
-              );
-            }}
-          />
-
-          <form.Field
-            name="password"
-            children={(field) => {
-              const isInvalid =
-                field.state.meta.isTouched && !field.state.meta.isValid;
-              return (
-                <div data-invalid={isInvalid}>
-                  <label htmlFor={field.name}>Password</label>
-                  <input
-                    id={field.name}
-                    name={field.name}
-                    type="password"
-                    value={field.state.value}
-                    onBlur={field.handleBlur}
-                    onChange={(e) => field.handleChange(e.target.value)}
-                    aria-invalid={isInvalid}
-                    placeholder="Enter your password"
-                    autoComplete="current-password"
-                  />
-                  {isInvalid && <FormError errors={field.state.meta.errors} />}
-                </div>
-              );
-            }}
-          />
-        </form>
-      </div>
-      <div>
-        <form.Subscribe
-          selector={(state) => state.isSubmitting}
-          children={(isSubmitting) => (
-            <button type="submit" form="login-form" disabled={isSubmitting}>
-              {isSubmitting ? <Spinner /> : "Login"}
-            </button>
-          )}
         />
-      </div>
+
+        <form.Field
+          name="password"
+          children={(field) => {
+            const isInvalid =
+              field.state.meta.isTouched && !field.state.meta.isValid;
+            return (
+              <div className={styles.fieldWrapper} data-invalid={isInvalid}>
+                <label htmlFor={field.name} className={styles.label}>
+                  Password
+                </label>
+                <input
+                  id={field.name}
+                  name={field.name}
+                  type="password"
+                  value={field.state.value}
+                  onBlur={field.handleBlur}
+                  onChange={(e) => field.handleChange(e.target.value)}
+                  aria-invalid={isInvalid}
+                  placeholder="Enter your password"
+                  autoComplete="current-password"
+                  className={styles.input}
+                />
+                {isInvalid && <FormError errors={field.state.meta.errors} />}
+              </div>
+            );
+          }}
+        />
+      </form>
+
+      <form.Subscribe
+        selector={(state) => state.isSubmitting}
+        children={(isSubmitting) => (
+          <button
+            type="submit"
+            form="login-form"
+            disabled={isSubmitting}
+            className={styles.submitButton}
+          >
+            {isSubmitting ? <Spinner /> : "Login"}
+          </button>
+        )}
+      />
     </section>
   );
 }

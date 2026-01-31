@@ -28,7 +28,7 @@ export const FormError: React.FC<FormErrorProps> = ({
     }
 
     return (
-      <ul className={styles.ErrorList}>
+      <ul className={styles.container}>
         {uniqueErrors.map(
           (error, index) =>
             error?.message && <li key={index}>{error.message}</li>,
@@ -40,7 +40,7 @@ export const FormError: React.FC<FormErrorProps> = ({
   if (!content) return null;
 
   return (
-    <div className={styles.FormError} {...props}>
+    <div className={styles.container} {...props}>
       {content}
     </div>
   );

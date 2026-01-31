@@ -1,4 +1,16 @@
-.fieldError {
-  color: var(--accent);
+.container {
   font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--accent);
+  font-weight: 500;
+  padding-left: 0.5rem;
+  list-style-type: disc;
+
+  li {
+    margin-bottom: 0.25rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

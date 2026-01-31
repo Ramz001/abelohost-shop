@@ -7,10 +7,10 @@ export default function RootProvider({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <main className="page-container">
       <HeaderWidget />
       {children}
       <FooterWidget />
-    </>
+    </main>
   );
 }
